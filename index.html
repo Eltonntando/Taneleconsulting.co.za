@@ -1,6 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        .share-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 14px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-left: 43%;
+        }
+
+        .social-platforms {
+            display: none;
+        }
+
+        .social-platforms.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 5px;
+        }
+
+        .social-platforms a {
+            margin: 8px;
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function showSocialPlatforms() {
+            const socialPlatforms = document.querySelector('.social-platforms');
+            socialPlatforms.classList.toggle('show');
+        }
+
+        function shareLink(platform) {
+            var linkToShare = "https://www.taneleconsulting.co.za/index.html"; // Replace with your link to share
+            var socialUrl;
+
+            if (platform === 'facebook') {
+                socialUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(linkToShare);
+            } else if (platform === 'instagram') {
+                socialUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(linkToShare);
+            } else if (platform === 'email') {
+                socialUrl = 'mailto:?body=' + encodeURIComponent(linkToShare);
+            } else if (platform === 'whatsapp') {
+                socialUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(linkToShare);
+            }
+
+            window.open(socialUrl, '_blank');
+        }
+    </script>
+
+
     <link rel="shortcut icon" type="x-icon" href="Images/Taneleconsulting.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,9 +88,7 @@
                     <i class="fa-solid fa-bars" id="mobile-nav-bar-icon"></i>
                 </div>
                 <ul class="header-nav-list" id="header-nav-list">
-                    <li class="header-nav-tab ">
-                        <a href="index.html">Home</a>
-                    </li>
+                    
                     <li class="header-nav-tab">
                         <a href="projects.html">Projects</a>
                     </li>
@@ -42,6 +98,9 @@
                     <li class="header-nav-tab">
                         <a href="contact.html" >Contact</a>
                     </li >
+                    <li class="header-nav-tab ">
+                        <a href="https://www.youtube.com">Vlog</a>
+                    </li>
                     <span class="highlight"></span>
                 </ul>
                 <div class="mode-change">
@@ -62,6 +121,14 @@
                     <button onclick="window.location.href='Services.html';"><i class="resume-btn">
                     </i>Our Services</button>
                 </div>
+
+                <div class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share website</div>
+    <div class="social-platforms">
+        <a href="https://www.taneleconsulting.co.za/index.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue"></i></a>
+        <a href="https://www.taneleconsulting.co.za/index.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple;"></i></a>
+        <a href="https://www.taneleconsulting.co.za/index.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red"></i></a>
+        <a href="https://www.taneleconsulting.co.za/index.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green"></i></a>
+    </div>
             </div>
             <!-- hero image  -->
             <div class="hero-image">
