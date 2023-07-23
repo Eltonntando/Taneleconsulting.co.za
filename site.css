@@ -356,14 +356,12 @@ tr{
 
     .header-nav .header-nav-list{
         display: block;
-        background-color: black;
-        color: black;
+        background-image: linear-gradient(to right,#FED9B7,#0081A7);;
+        color: white;
         overflow: hidden;
         content: " ";
         height: 100%;
         width: 80%;
-        border: grey;
-        box-shadow: 3px 3px 10px var(--secondaryColor);
         flex-direction: column;
         justify-content: space-around;
         position: absolute;
