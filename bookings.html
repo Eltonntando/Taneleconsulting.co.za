@@ -98,14 +98,18 @@
   <script>
     function sendBookingDetails() {
       // Get the input values
-      var eventName = document.getElementById('event-name').value;
-      var eventDate = document.getElementById('event-date').value;
+      var eventName = document.getElementById('client-name').value;
+      var eventDate = document.getElementById('contuct-number').value;
+      var eventDate = document.getElementById('email-address').value;
       var eventDescription = document.getElementById('event-description').value;
+      var eventDate = document.getElementById('event-date').value;
 
       // Compose the message
-      var message = "Event Name: " + eventName + "\n"
-            + "Event Date: " + eventDate + "\n"
-            + "Event Description: " + eventDescription;
+      var message = "Name: " + clientName + "\n"
+            + "Contuct Number: " + eventDate + "\n"
+            + "Email Address: " + emailAddress + "\n"
+            + "Service/Event Name & Description: " + eventDescription + "\n"
+            + "Event Date: " + eventDate;
 
       // Send via email
       var emailLink = "mailto:mawelatanele@gmail.com?subject=Booking Request&body=" + encodeURIComponent(message);
@@ -135,14 +139,20 @@
 
   <div class="container">
     <h2>Booking Section</h2>
-    <label for="event-name">Service:</label>
-    <input type="text" id="event-name">
+    <label for="event-name">Name:</label>
+    <input type="text" id="client-name">
+
+    <label for="event-date">Contuct number:</label>
+    <input type="text" id="contuct-number">
+
+    <label for="event-date">E-mail Address:</label>
+    <input type="text" id="email-address">
+
+    <label for="event-description">Service/Event name & Description:</label>
+    <textarea id="event-description"></textarea>
 
     <label for="event-date">Date needed:</label>
     <input type="text" id="event-date">
-
-    <label for="event-description">Any spcifications:</label>
-    <textarea id="event-description"></textarea>
 
     <label for="platform">Send via:</label>
     <select id="platform">
