@@ -99,14 +99,14 @@
     function sendBookingDetails() {
       // Get the input values
       var eventName = document.getElementById('client-name').value;
-      var eventDate = document.getElementById('contuct-number').value;
+      var eventDate = document.getElementById('contact-number').value;
       var eventDate = document.getElementById('email-address').value;
       var eventDescription = document.getElementById('event-description').value;
       var eventDate = document.getElementById('event-date').value;
 
       // Compose the message
       var message = "Name: " + clientName + "\n"
-            + "Contuct Number: " + eventDate + "\n"
+            + "Contact Number: " + eventDate + "\n"
             + "Email Address: " + emailAddress + "\n"
             + "Service/Event Name & Description: " + eventDescription + "\n"
             + "Event Date: " + eventDate;
@@ -142,8 +142,8 @@
     <label for="event-name">Name:</label>
     <input type="text" id="client-name">
 
-    <label for="event-date">Contuct number:</label>
-    <input type="text" id="contuct-number">
+    <label for="event-date">Contact number:</label>
+    <input type="text" id="contact-number">
 
     <label for="event-date">E-mail Address:</label>
     <input type="text" id="email-address">
